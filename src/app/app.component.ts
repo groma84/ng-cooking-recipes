@@ -6,5 +6,22 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'app';
+
+  showRecipes = true;
+
+  switchShownContent(contentId: string) {
+    switch (contentId) {
+      case 'recipes':
+        this.showRecipes = true;
+        break;
+
+      case 'shoppingList':
+        this.showRecipes = false;
+        break;
+
+      default:
+        this.showRecipes = true;
+        break;
+    }
+  }
 }
